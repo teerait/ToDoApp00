@@ -6,6 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,7 +30,7 @@ export class MyApp {
           this.rootPage = HomePage;
           authObserver.unsubscribe();
       } else {
-          this.rootPage = LoginPage;
+          this.rootPage = RegisterPage;
           authObserver.unsubscribe();
       }
     });
