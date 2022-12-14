@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>
+      To-do List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+		<ion-input type="text" placeholder="กรุณาเพิ่มงาน" [(ngModel)]="taskName"></ion-input>
+		<div class="item-note" item-end>
+			<button ion-button icon-only large (click)="addTask()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+		</div>
+	</ion-item>
+  <div padding>
+		<ion-list>
+			<ion-item *ngFor="let todo of taskList; let i = index">
+        {{todo}}
+        <div class="item-note" item-end>
+          <button ion-button clear large (click)="updateTask(i)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button clear large (click)="deleteTask(i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+		</ion-list>
+	</div>
+
+</ion-content>
